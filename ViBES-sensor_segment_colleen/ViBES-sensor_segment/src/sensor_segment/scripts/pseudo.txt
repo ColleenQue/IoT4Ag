@@ -1,0 +1,20 @@
+
+distance_x = goal_x - current_position_x
+distance_y = goal_y - current_position_y
+
+speed ∝ distance = pythagorean(distance_x,distance_y) 
+goal_angle = math.atan2 (distance_y,distance_x)
+turning_angle = goal_angle - current_angle
+
+when abs(turning_angle) <= 0.1:
+    linear_velocity = speed
+    angular_velocity = 0
+otherwise:
+    linear_velocity = 0
+    angular_velocity = turning angle 
+
+
+
+
+robot location: [[-3.49282919658573, -7.836344330580724]]
+math.cos(self.goal_angle)/2: 
