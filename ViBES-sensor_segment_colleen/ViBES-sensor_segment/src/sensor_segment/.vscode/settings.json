@@ -1,0 +1,12 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/grasp/Downloads/ViBES-sensor_segment_colleen/ViBES-sensor_segment/devel/lib/python3/dist-packages",
+        "/home/grasp/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/grasp/Downloads/ViBES-sensor_segment_colleen/ViBES-sensor_segment/devel/lib/python3/dist-packages",
+        "/home/grasp/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}

@@ -1,0 +1,45 @@
+<launch>
+
+    <arg name="print_center_yuv" default="false" />
+
+    <arg name="des_yuv_y" default="40" />
+    <arg name="des_yuv_u" default="160" />
+    <arg name="des_yuv_v" default="110" />
+
+    <arg name="pm_range_yuv_y" default="30" />
+    <arg name="pm_range_yuv_u" default="20" />
+    <arg name="pm_range_yuv_v" default="20" />
+    
+    <arg name="desired_blob_center_x" default="0.5" />
+    <arg name="desired_blob_center_y" default="0.5" />
+    <arg name="desired_blob_width" default="0.40" />
+
+    <arg name="manual_thrust_clip" default="0.5" />
+    <arg name="window_size" default="200" />
+    <arg name="thrust_scaler" default="0.8" />
+    <arg name="brake_window" default="0.1" />
+
+    <node pkg="vision_ctl" type="vision_to_lowctl.py" name="vision_to_lowctl" output="screen">
+        <param name="print_center_yuv" value="$(arg print_center_yuv)" />
+
+        <param name="des_yuv_y" value="$(arg des_yuv_y)" />
+        <param name="des_yuv_u" value="$(arg des_yuv_u)" />
+        <param name="des_yuv_v" value="$(arg des_yuv_v)" />
+
+        <param name="pm_range_yuv_y" value="$(arg pm_range_yuv_y)" />
+        <param name="pm_range_yuv_u" value="$(arg pm_range_yuv_u)" />
+        <param name="pm_range_yuv_v" value="$(arg pm_range_yuv_v)" />
+
+        <param name="desired_blob_center_x" value="$(arg desired_blob_center_x)" />
+        <param name="desired_blob_center_y" value="$(arg desired_blob_center_y)" />
+        <param name="desired_blob_width" value="$(arg desired_blob_width)" />
+    </node>
+
+    <node pkg="vision_ctl" type="stepup_freq_ctl.py" name="stepup_freq_ctl" output="screen">
+        <param name="manual_thrust_clip" value="$(arg manual_thrust_clip)" />
+        <param name="window_size" value="$(arg window_size)" />
+        <param name="thrust_scaler" value="$(arg thrust_scaler)" />
+        <param name="brake_window" value="$(arg brake_window)" />
+    </node>
+
+</launch>
