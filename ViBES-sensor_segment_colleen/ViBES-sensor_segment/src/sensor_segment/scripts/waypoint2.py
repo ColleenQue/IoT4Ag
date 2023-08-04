@@ -168,7 +168,8 @@ class Waypoint:
             action_client.wait_for_server()
 
             #generate goal points
-            waypoints = self.circular_motion(low_goal_x,low_goal_y,8)
+            #waypoints = self.circular_motion(low_goal_x,low_goal_y,8)
+            waypoints = [[low_goal_x,low_goal_y]]
             print(waypoints)
             waypoints1 = []
             for x,y in waypoints:
@@ -332,7 +333,7 @@ class Waypoint:
             self.waypoints = self.get_lawn_mower_pts(diagonal_corners,num_polygons,direction)
             print(self.waypoints)
             #[x,y]
-            self.current_index = 0
+            self.current_index = 10
             self.current_goal = self.waypoints[self.current_index]
 
 
